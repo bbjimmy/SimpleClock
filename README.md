@@ -1,2 +1,2 @@
 # SimpleClock
-"Analog Clock screensaver"
+Analog Clock screensaver
