@@ -51,13 +51,13 @@ Clock::Clock(BMessage *message, image_id image)
 void
 Clock::StartConfig(BView *view)
 {
-	BStringView	*aboutView = new BStringView(BRect(10, 10, 200, 35),
+	BStringView	*aboutView = new BStringView(BRect(10, 10, 200, 25),
 		B_EMPTY_STRING, "Simple Clock");
 	aboutView->SetFont(be_bold_font);
 	aboutView->SetFontSize(15);
 	view->AddChild(aboutView);
-	aboutView = new BStringView(BRect(10, 40, 200, 65),
-		B_EMPTY_STRING, " Ver 1.0, ©3dEyes**");
+	aboutView = new BStringView(BRect(10, 10, 250, 45),
+		B_EMPTY_STRING, " Ver 1.0, ©3dEyes**  aditions by bbjimmy");
 	view->AddChild(aboutView);
 }
 
@@ -65,7 +65,7 @@ Clock::StartConfig(BView *view)
 status_t
 Clock::StartSaver(BView *view, bool)
 {
-	SetTickSize(1000000);
+	SetTickSize(100000);
 	return B_OK;
 }
 
@@ -95,7 +95,7 @@ Clock::Draw(BView *view, int32)
 	offscreenView.SetLowColor(0, 0, 0);
 	offscreenView.FillRect(offscreenView.Bounds());
 
-	offscreenView.SetHighColor(200, 200, 200);
+	offscreenView.SetHighColor(241, 192, 123);
 	
 	centerX = width / 2.0;
 	centerY = height / 2.0;
@@ -109,7 +109,7 @@ Clock::Draw(BView *view, int32)
 		_drawBlock(&offscreenView, x, y, markAngle, 14.0 * zoom);
 	}
 
-	offscreenView.SetHighColor(255, 255, 255);
+	offscreenView.SetHighColor(255, 192, 123);
 
 	markAngle = 0;
 	markRadius = 500.0 * zoom;
@@ -120,7 +120,7 @@ Clock::Draw(BView *view, int32)
 		_drawBlock(&offscreenView, x, y, markAngle, 32 * zoom);
 	}
 
-	offscreenView.SetHighColor(255, 255, 255);
+	offscreenView.SetHighColor(255, 207, 123);
 	_drawArrow(&offscreenView, centerX, centerY,
 		((2 * M_PI / 60) * minuteVal) - (M_PI / 2), 220 * zoom, 1, 8 * zoom);
 
