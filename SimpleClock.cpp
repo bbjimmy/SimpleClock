@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2008-2009 Gerasim Troeglazov (3dEyes**). All Rights Reserved.
+ * Copyright (c) 2021 Jim Saxton (bbjimmy).
  * This file may be used under the terms of the MIT License.
  */
 
